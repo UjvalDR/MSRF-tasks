@@ -48,7 +48,7 @@ def main():
     volPer = 0
 
     while True:
-        status, image = webcamvid.read()
+        ret, image = webcamvid.read()
         handLandmarks = findHandLandPos(image=image, draw=True)
 
         if(len(handLandmarks) != 0):
