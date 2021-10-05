@@ -43,12 +43,12 @@ def findHandLandPos(image, handNumber=0, draw=False):
 
 def main():
     
-    webcamFeed = cv.VideoCapture(0)
+    webcamvid = cv.VideoCapture(0)
     volBar = 400
     volPer = 0
 
     while True:
-        status, image = webcamFeed.read()
+        status, image = webcamvid.read()
         handLandmarks = findHandLandPos(image=image, draw=True)
 
         if(len(handLandmarks) != 0):
