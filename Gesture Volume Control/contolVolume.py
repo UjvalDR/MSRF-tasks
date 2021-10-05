@@ -14,8 +14,7 @@ mpDraw = mp.solutions.drawing_utils
 
 
 devices = AudioUtilities.GetSpeakers()
-interface = devices.Activate(
-IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
+interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
 volume = cast(interface, POINTER(IAudioEndpointVolume))
 
 #####################################################################
@@ -78,7 +77,7 @@ def main():
             # To set volume bar 
             cv.rectangle(image,(50,150),(85,400),(0,0,0),3)
             cv.rectangle(image,(50,int(volBar)),(85,400),(0,255,0),-1)
-            cv.putText(image,f'{int(volPer)} %',(40,450),cv.FONT_HERSHEY_COMPLEX_SMALL,2,(255,0,0),1)
+            cv.putText(image,f'{int(volPer)} %',(40,450),cv.FONT_HERSHEY_COMPLEX_SMALL,1,(0,0,255),2)
 
             print(int(volPer)) # to print volume in the console
 
